@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form
+{
+    @apply flex place-content-center;
+}
+
+fieldset
+{
+    @apply relative rounded-xl place-content-center bg-gray-200 py-8;
+}
+
+legend
+{
+    @apply text-white text-xl font-semibold bg-blue-900 rounded-lg px-6 py-1 ml-6;
+}
+
+.buttons
+{
+    @apply flex flex-wrap max-w-2xl space-x-2;
+}
+
+.buttons label
+{
+    @apply relative flex justify-center place-items-center cursor-pointer mb-10;
+}
+
+.buttons label input
+{
+    @apply hidden;
+}
+
+.buttons label span
+{
+    @apply absolute w-40 h-12 bg-blue-600 border-2 border-blue-700 rounded-lg;
+}
+
+.buttons label input:checked ~span
+{
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.35),
+    inset 0 15px 25px rgba(0, 0, 0, 0.35);
+}
+
+.buttons label p
+{
+    @apply relative text-center w-48 z-10 text-2xl text-black;
+}
+
+.buttons label input:checked ~ p
+{
+    @apply text-white;
+}
+
+input[type='text']
+{
+    @apply h-12 rounded-lg outline-none pl-10 text-lg bg-gray-400;
+}
+
+
+
+
+
+
+@tailwind utilities;
