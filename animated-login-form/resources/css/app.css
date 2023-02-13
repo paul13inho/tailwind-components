@@ -1,3 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
+
+*
+{
+    @apply m-0 p-0 box-border font-poppins;
+}
+
+body
+{
+    @apply flex justify-center place-items-center min-h-screen bg-gray-500;
+}
+
+.box
+{
+    @apply relative w-box h-box ring-4 ring-gray-800 ring-inset bg-gray-700 rounded overflow-hidden z-30;
+}
+
+.box::before
+{
+    content: '';
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg,transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    transform-origin:  bottom right;
+    animation: animate 6s linear infinite;
+    @apply absolute w-box h-box z-10 overflow-hidden;
+}
+
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.box form
+{
+    @apply absolute w-full h-full px-10 py-10 rounded z-20 overflow-hidden flex-col;
+}
+
+.box form h2
+{
+    @apply text-center text-white text-xl font-bold tracking-widest;
+}
+
+.box form .inputBox
+{
+    @apply relative w-inputbox mt-inputbox;
+}
+
+.box form .inputBox input
+{
+    transition: 0.5s;
+    @apply relative py-4 px-4 w-inputbox bg-transparent outline-none shadow-none text-black text-lg tracking-widest;
+}
+
+.box form .inputBox span
+{
+    transition: 0.5s;
+    @apply absolute left-0 px-2 pointer-events-none text-gray-300 tracking-widest;
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span
+{
+    transform: translateY(-24px);
+    @apply text-white text-sm;
+}
+
+.box form .inputBox i
+{
+    transition: 0.5s;
+    @apply absolute left-0 bottom-0 w-full h-px bg-white rounded overflow-hidden pointer-events-none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i
+{
+    @apply h-14 bg-white opacity-20;
+}
+
+.box form .links
+{
+    @apply flex justify-between;
+}
+
+.box form .links a
+{
+    @apply my-4 text-xs text-white hover:font-semibold hover:text-blue-400 tracking-widest;
+}
+
+.box form input[type="submit"]
+{
+    @apply flex border-none outline-none py-2 px-16 bg-white mx-auto cursor-pointer rounded text-lg tracking-widest;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @tailwind utilities;
