@@ -6,12 +6,16 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-<h1>
-    Hello world!
-</h1>
 
-<div>
-ffdf
+<div class="card">
+    <div class="content">
+        <h2>captain marvel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a href="#">read more</a>
+    </div>
+    <img src="{{asset('img/1.png')}}">
 </div>
+
 </body>
 </html>
